@@ -31,12 +31,11 @@ function saveBooks() {
   localStorage.setItem("books", JSON.stringify(books));
 }
 
-function displayBooks() {
+function displayBooks(bookArray = books) {
   bookList.innerHTML = "";
-  bookCount.textContent = "Total books: " + books.length;
+  bookCount.textContent = "Total books: " + bookArray.length;
 
-  for (let i = 0; i < books.length; i++) {
-    const book = books[i];
+  bookArray.forEach((book) => {
     const listItem = document.createElement("li");
 
     listItem.textContent =
@@ -48,14 +47,16 @@ function displayBooks() {
     deleteButton.textContent = "Delete";
 
     deleteButton.addEventListener("click", function () {
-      books.splice(i, 1);
+      const bookIndex = books.indexOf(book);
+
+      books.splice(bookIndex, 1);
       saveBooks();
       displayBooks();
     });
 
     listItem.appendChild(deleteButton);
     bookList.appendChild(listItem);
-  }
+  });
 }
 
 const bookForm = document.getElementById("bookForm");
@@ -91,17 +92,14 @@ bookForm.addEventListener("submit", function (event) {
 searchInput.addEventListener("input", function () {
   const searchText = searchInput.value.toLowerCase();
 
-  const listItems = bookList.querySelectorAll("li");
+  const filteredBooks = books.filter((book) => {
+    const title = book.title.toLowerCase();
+    const author = book.author.toLowerCase();
 
-  for (let i = 0; i < listItems.length; i++) {
-    const bookText = listItems[i].textContent.toLowerCase();
+    return title.includes(searchText) || author.includes(searchText);
+  });
 
-    if (bookText.includes(searchText)) {
-      listItems[i].style.display = "flex";
-    } else {
-      listItems[i].style.display = "none";
-    }
-  }
+  displayBooks(filteredBooks);
 });
 
 displayBooks();
