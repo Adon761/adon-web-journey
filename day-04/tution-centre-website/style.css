@@ -1,0 +1,631 @@
+/* Custom CSS Variables */
+:root {
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --secondary: #0f172a;
+  --accent: #f59e0b;
+  --bg-light: #f8fafc;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --white: #ffffff;
+  --border-color: #e2e8f0;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --radius: 12px;
+  --transition: all 0.25s ease-in-out;
+}
+
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-main);
+  background-color: var(--bg-light);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.section-title {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 50px auto;
+}
+
+.section-title h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--secondary);
+  margin-bottom: 12px;
+}
+
+.section-title p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+/* Navigation */
+.navbar {
+  background: var(--white);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--primary);
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+.nav-cta {
+  background: var(--primary);
+  color: var(--white) !important;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-weight: 600 !important;
+}
+
+.nav-cta:hover {
+  background: var(--primary-hover);
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  color: var(--white);
+  padding: 90px 0 70px 0;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(37, 99, 235, 0.2);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 2.75rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  color: #94a3b8;
+  margin-bottom: 32px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 30px;
+}
+
+.stat-item strong {
+  display: block;
+  font-size: 1.5rem;
+  color: var(--white);
+}
+
+.stat-item span {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.btn-outline {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.btn-full {
+  width: 100%;
+}
+
+/* Feature Cards Grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.feature-card {
+  background: var(--white);
+  padding: 32px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.feature-icon {
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+}
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: var(--secondary);
+}
+
+.feature-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Courses Grid */
+.courses {
+  background: var(--white);
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.course-card {
+  background: var(--bg-light);
+  padding: 36px 28px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.course-card.featured {
+  border: 2px solid var(--primary);
+  background: var(--white);
+  box-shadow: var(--shadow-md);
+}
+
+.course-badge {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.course-card h3 {
+  font-size: 1.4rem;
+  color: var(--secondary);
+  margin-bottom: 12px;
+}
+
+.course-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.course-list {
+  list-style: none;
+  margin-bottom: 28px;
+  margin-top: auto;
+}
+
+.course-list li {
+  font-size: 0.92rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.course-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+/* Contact & Lead Form */
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.contact-info h2 {
+  font-size: 2.2rem;
+  color: var(--secondary);
+  margin-bottom: 16px;
+}
+
+.contact-info p {
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+
+.contact-details p {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  color: var(--text-main);
+}
+
+.contact-form {
+  background: var(--white);
+  padding: 36px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+}
+
+.contact-form h3 {
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  color: var(--secondary);
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--text-main);
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Footer */
+.footer {
+  background: var(--secondary);
+  color: var(--text-muted);
+  text-align: center;
+  padding: 24px 0;
+  font-size: 0.9rem;
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #25d366;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+  transition: var(--transition);
+  z-index: 1000;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.05);
+  background-color: #20ba5a;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .nav-links {
+    display: none; /* Can be expanded into a mobile menu in Block 3 */
+  }
+}
+
+/* ==========================================
+   Exclusive Gold Accent Theme
+   ========================================== */
+
+.course-card.exclusive {
+  border: 2px solid #f59e0b; /* Gold Border */
+  background: linear-gradient(180deg, #fffdf5 0%, #ffffff 100%); /* Subtle warmth */
+  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.18); /* Ambient gold glow */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Corner Ribbon */
+.exclusive-ribbon {
+  position: absolute;
+  top: 34px;
+  right: -42px;
+  background: #f59e0b;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 4px 32px;
+  transform: rotate(45deg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.5px;
+}
+
+/* Gold Badge & Bullet Checks */
+.course-badge.gold-badge {
+  color: #b45309;
+}
+
+.course-list.gold-list li::before {
+  color: #f59e0b;
+}
+
+/* Gold CTA Button */
+.btn-gold {
+  background: #f59e0b;
+  color: #ffffff;
+  border: none;
+}
+
+.btn-gold:hover {
+  background: #ffb560;
+}
+
+/* ==========================================
+   Pricing Badges & Headers
+   ========================================== */
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.price-tag {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.price-tag span {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.gold-price {
+  color: #b45309;
+}
+
+/* ==========================================
+   Faculty Details Grid
+   ========================================== */
+
+.faculty {
+  background: var(--bg-light);
+}
+
+.faculty-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.faculty-card {
+  background: var(--white);
+  padding: 30px 24px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  text-align: center;
+  transition: var(--transition);
+}
+
+.faculty-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.faculty-avatar {
+  font-size: 3rem;
+  margin-bottom: 12px;
+}
+
+.faculty-card h3 {
+  font-size: 1.2rem;
+  color: var(--secondary);
+  margin-bottom: 4px;
+}
+
+.faculty-role {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.faculty-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================
+   Testimonials Grid
+   ========================================== */
+
+.testimonials {
+  background: var(--white);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.testimonial-card {
+  background: var(--bg-light);
+  padding: 30px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.stars {
+  color: var(--accent);
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+.testimonial-text {
+  font-size: 0.95rem;
+  color: var(--text-main);
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.testimonial-author strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--secondary);
+}
+
+.testimonial-author span {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
