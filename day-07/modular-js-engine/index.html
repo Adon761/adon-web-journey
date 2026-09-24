@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 7: ES6+ Modular State Engine</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <main class="container">
+    <header class="header">
+      <h1>Modular ES6 State Engine</h1>
+      <p>Clean architecture using ES6 Modules, Pure Functions & Immutable State</p>
+    </header>
+
+    <section class="card">
+      <form id="task-form">
+        <input type="text" id="task-input" placeholder="Enter task title..." required />
+        <select id="priority-select">
+          <option value="Low">Low Priority</option>
+          <option value="Medium" selected>Medium Priority</option>
+          <option value="High">High Priority</option>
+        </select>
+        <button type="submit" class="btn">Add Task</button>
+      </form>
+
+      <div class="stats-bar">
+        <span>Total: <strong id="total-count">0</strong></span>
+        <span>High Priority: <strong id="high-count">0</strong></span>
+      </div>
+
+      <ul id="task-list" class="task-list"></ul>
+    </section>
+  </main>
+
+  <!-- Notice type="module" -->
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
