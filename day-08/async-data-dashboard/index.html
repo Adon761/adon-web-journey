@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 8: Async Crypto Tracker & Analytics</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <main class="container">
+    <header class="header">
+      <div class="header-title">
+        <h1>Crypto Market Intelligence</h1>
+        <p>Async API pipeline powered by Array Transformations & Closures</p>
+      </div>
+      <button id="refresh-btn" class="btn">↻ Refresh Prices</button>
+    </header>
+
+    <!-- Analytics Banner computed via .reduce() -->
+    <section class="analytics-bar">
+      <div class="stat-card">
+        <span class="label">Top Assets</span>
+        <strong id="stat-count">0</strong>
+      </div>
+      <div class="stat-card">
+        <span class="label">Avg Price (USD)</span>
+        <strong id="stat-avg">$0.00</strong>
+      </div>
+      <div class="stat-card">
+        <span class="label">24h Gainers</span>
+        <strong id="stat-gainers" class="text-green">0</strong>
+      </div>
+    </section>
+
+    <!-- Filter & Search Controls -->
+    <section class="controls-card">
+      <input type="text" id="search-input" placeholder="Filter asset by name or symbol (e.g. BTC)..." />
+      <div class="filter-group">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="gainers">Gainers (+)</button>
+        <button class="filter-btn" data-filter="losers">Losers (-)</button>
+      </div>
+    </section>
+
+    <!-- Status & Feedback Indicators -->
+    <div id="status-message" class="status-message">Fetching live market data...</div>
+
+    <!-- Live Grid rendered via .map() -->
+    <section id="crypto-grid" class="crypto-grid"></section>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
